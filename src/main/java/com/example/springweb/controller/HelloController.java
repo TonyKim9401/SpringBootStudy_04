@@ -12,11 +12,8 @@ import java.io.PrintWriter;
 public class HelloController {
 
     @GetMapping("/hello")
-    public void hello(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("hello spring mvc");
-        out.close();
+    public String hello() throws IOException {
+        return "hello";
     }
 
 }
