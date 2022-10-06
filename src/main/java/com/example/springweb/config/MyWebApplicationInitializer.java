@@ -19,11 +19,14 @@ public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatc
         return new Filter[] {encodingFilter};
     }
 
+
+    // 비지니스 로직 관련 설정
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{AppConfig.class};
     }
 
+    // 웹 관련 설정
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[]{WebConfig.class}; // 스프링의 설정 파일을 리턴시킴
