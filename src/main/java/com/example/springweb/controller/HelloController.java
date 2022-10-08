@@ -26,7 +26,7 @@ public class HelloController {
 
     @GetMapping("/add")
     public String add() throws Exception{
-        toDoService.addToDo();
+        toDoService.addToDo("wrong location");
         return "add";
     }
 

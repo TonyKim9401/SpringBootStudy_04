@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,10 +16,16 @@ public class ToDoService {
 
     private final ToDoRepository toDoRepository;
 
+    @Transactional(readOnly = true)
+    public List<ToDo> getToDoList(){
+        return toDoRepository.findAll();
+    }
+
     @Transactional
-    public void addToDo(){
+    public void addToDo(String todo){
         ToDo toDo = new ToDo();
-        toDo.setTodo("hello + " + new Date().toString());
+        toDo.setTodo(todo);
         toDoRepository.save(toDo);
     }
+
 }
