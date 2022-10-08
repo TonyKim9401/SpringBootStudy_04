@@ -22,7 +22,6 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-
     implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.7.3'
     implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version:'5.6.11.Final'
 
