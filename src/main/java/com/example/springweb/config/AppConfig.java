@@ -22,11 +22,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-//@Configuration
-
+@Configuration
 @EnableTransactionManagement
 @ComponentScan(
         basePackages = {"com.example"},
+        useDefaultFilters = false,
         includeFilters = {
                 @ComponentScan.Filter(Service.class),
                 @ComponentScan.Filter(Repository.class)
